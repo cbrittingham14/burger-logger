@@ -6,6 +6,10 @@
     <title>BURGAS</title>
 </head>
 <body>
-    
+    <h1>Burgers</h1>
+    {{#each burgers}}
+    {{ burg }}
+    <button class="devour" data-id="{{id}}">DEVOUR</button>
+    {{/each}}
 </body>
 </html>

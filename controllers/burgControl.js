@@ -9,6 +9,9 @@ router.get("/", function(req,res){
     console.log("it worked");
     burg.getAll(data =>{
         console.log("our data: ", data);
-        res.end()
+        let burgObj = {
+            burgers: data
+        };
+        res.render("index", burgObj);
     });
 });
