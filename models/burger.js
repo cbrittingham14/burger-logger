@@ -7,6 +7,11 @@ const burger = {
             cb(r);
         });
     },
+    devour: function(id, cb){
+        orm.devour(id, r => {
+            cb(r);
+        })
+    }
 };
 
 module.exports = burger;

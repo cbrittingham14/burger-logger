@@ -8,6 +8,14 @@ const orm = {
             if(err) throw err;
             cb(result);
         });
+    },
+    devour: function(id, cb){
+        let q = "UPDATE burgers SET devoured = true WHERE id = " + id;
+        c.query(q, (err, result)=>{
+            if(err) throw err;
+            cb(result);
+        })
+        
     }
 };
 
