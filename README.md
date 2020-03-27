@@ -13,7 +13,7 @@ Users can add new burgers to the database by entering text in the text box.
 
 ## Screenshots
 
-![Screenshot of the app]((/public/assets/img/screenshot.png))
+![Screenshot of the app]((./public/assets/img/screenshot.png))
 
 ## Future development
 
