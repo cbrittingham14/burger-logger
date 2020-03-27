@@ -1,6 +1,7 @@
 //import orm module
 const orm = require("../config/orm.js");
 
+//intermediary object connecting controller to the orm
 const burger = {
     getAll: function(cb){
         orm.getAll(r => cb(r));
@@ -12,5 +13,5 @@ const burger = {
         orm.add(burg, r => cb(r));
     }
 };
-
+//export module
 module.exports = burger;

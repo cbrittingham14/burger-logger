@@ -1,17 +1,20 @@
+//wait for the view to load before executing any logic
 $(function(){
 
+    //send a request to change devour state when 
+    // a user clicks the devour button
     $(".devour").on("click", function(e){
         e.preventDefault();
         const id = $(this).data("id");
-
         $.ajax("/api/devour/" + id, {
             type: "GET"
         }).then( function(){
-            console.log("sent a request");
             location.reload();
         });
     });
 
+    //send a request to add the text from the textbox
+    //to the database as a new burger
     $(".add-burger").on("click", function(e){
         e.preventDefault();
         const b ={
@@ -21,7 +24,6 @@ $(function(){
             type: "POST",
             data: b
         }).then(()=> {
-            console.log("added a burger");
             location.reload();
         });
     })
