@@ -6,10 +6,40 @@
     <title>BURGAS</title>
 </head>
 <body>
-    <h1>Burgers</h1>
-    {{#each burgers}}
-    {{ burg }}
-    <button class="devour" data-id="{{id}}">DEVOUR</button>
-    {{/each}}
+    <h1 class="jerome">Burgers</h1>
+    
+         <p class="hot">
+             <ul class="hot-ul">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <p class="hot-p">
+                            {{ burg }}
+                            <button class="devour" data-id="{{id}}">DEVOUR</button>
+                        </p>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </p>
+        <p class="done">
+            <ul class="done-ul">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <p class="done-p">
+                            {{burg}}
+                        </p>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </p>
+    
+
+    <form class="create-form">
+        <div class="form-group">
+            <label for="bu">Burger:</label>
+            <input type="text" id="bu" name="name">
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+
 </body>
 </html>

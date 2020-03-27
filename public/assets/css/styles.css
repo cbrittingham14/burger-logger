@@ -1,0 +1,22 @@
+
+.jerome{
+    text-align: center;
+}
+.create-form{
+    text-align: center;
+}
+.form-group{
+    display: inline-block;
+}
+.hot-p{
+    text-align: left;
+}
+.done-p{
+    text-align: right;
+}
+.done{
+    display: inline-block;
+}
+.hot{
+    display: inline-block;
+}
