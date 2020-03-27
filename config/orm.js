@@ -16,6 +16,14 @@ const orm = {
             cb(result);
         })
         
+    },
+    add: function(burg, cb){
+        console.log(burg);
+        let q = "INSERT INTO burgers (burg) VALUES (?)";
+        c.query(q, [burg.burg], (err, result) =>{
+            if(err) throw err;
+            cb(result);
+        });
     }
 };
 
