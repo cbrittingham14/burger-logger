@@ -17,6 +17,21 @@ router.get("/", function(req,res){
     });
 });
 
+//code below copied from heroku
+router.get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect()
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+  //code above copied from heroku
+
 //route for changing a burgers state to devoured
 router.get("/api/devour/:id", function( req, res){
     const id = req.params.id;

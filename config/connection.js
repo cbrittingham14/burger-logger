@@ -1,6 +1,14 @@
 //import mysql
 const mysql = require("mysql");
 
+//code below copied from heroku
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
+});
+//code above copied from heroku
+
 //create connection, set database
 const connection = mysql.createConnection({
     host: "localhost",
